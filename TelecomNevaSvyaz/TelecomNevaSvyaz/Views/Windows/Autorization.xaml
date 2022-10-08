@@ -5,35 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TelecomNevaSvyaz"
         mc:Ignorable="d"
+        Loaded="Window_Loaded"
         Icon="/Resource/icon.ico"
         Title="Авторизация" Height="320" Width="550">
     <Grid>
         <StackPanel Margin="30">
-            <TextBlock Text="Телеком Нева Связь" FontSize="25" ></TextBlock>
+            <TextBlock Text="Телеком Нева Связь" FontSize="25"></TextBlock>
         </StackPanel>
         <StackPanel HorizontalAlignment="Right">
             <Image Source="/Resource/logo.jpg" Width="140"></Image>
         </StackPanel>
         <StackPanel Margin="0,30,0,0" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <StackPanel Orientation="Horizontal" >
+            <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Номер" Margin="0,0,29,0"></TextBlock>
-                <TextBox Name="txbLogin" Width="180"></TextBox>
+                <TextBox Name="txbLogin" Width="180" KeyDown="txbLogin_KeyDown"></TextBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="5">
                 <TextBlock Text="Пароль"  Margin="0,0,10,0"/>
-                <TextBox x:Name="txbPassword"  Margin="10,0,0,0" Width="180"/>
+                <TextBox x:Name="txbPassword"  Margin="10,0,0,0" Width="180" KeyDown="txbPassword_KeyDown"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="0,0,0,0">
                 <TextBlock Text="Код" Margin="0,0,20,0"></TextBlock>
-                <TextBox Name="txbCode" Width="120" Margin="25,0,0,0"></TextBox>
-                <!--<Button Name="">
+                <TextBox Name="txbCode" TextChanged="txbCode_TextChanged" Width="120" Margin="25,0,0,0"></TextBox>
+                <Button Name="DwnBtn" Click="DwnBtn_Click">
                     <Image Source="/Resource/download.png" Height="20"></Image>
-                </Button>-->
+                </Button>
             </StackPanel>
         </StackPanel>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="62,0,0,30">
             <Button Content="Отмена" Name="CancelBtn" Click="CancelBtn_Click" Width="80"></Button>
-            <Button Content="Вход" Name="LoginBtn" Click="LoginBtn_Click" Width="80" Margin="20,0,0,0"></Button>
+            <Button Content="Вход" Name="LoginBtn" Click="LoginBtn_Click" Width="80" IsDefault="True" Margin="20,0,0,0"></Button>
         </StackPanel>
 
     </Grid>
